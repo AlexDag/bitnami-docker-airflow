@@ -1,6 +1,7 @@
 # deploy, start airflow on docker>
   ./start.sh
-# deployment task into airflow:
+# deployment task into airflow from the account of user  "airflow_docker":
+  
 put file into > /data/airflow/dag/
 # run airflow dashboard>
      http://ip-airflow--machine:8080
