@@ -1,0 +1,20 @@
+
+/data/airflow/airflow_postgresql
+
+docker volume create --driver local  --opt type=none --opt device=/data/airflow/airflow_postgresql  --opt o=bind 
+
+
+  # inside a docker-compose file
+  ...
+  volumes:
+    bind-test:
+      driver: local
+      driver_opts:
+        type: none
+        o: bind
+        device: /path/to-volume
+
+
+sudo chown -R 1001:0  /path/to-volume
+#clone SELinux context
+chcon --reference=/path/to/existingfile /path/to/a/newfile
